@@ -5,15 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nguyen Labs - Workspace</title>
   <style>
-
-    main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px; /* Increased gap to give it a distinct "desktop spacing" feel */
-  width: 100%;
-  margin-top: 16px; /* Pushes the first window away from the icon grid */
-  margin-bottom: 32px; /* Adds space before hitting the bottom taskbar */
-}
     /* --- Core Windows 95 Design Tokens --- */
     :root {
       --desktop-bg: #008080; /* Classic Teal */
@@ -114,6 +105,16 @@
       outline: 1px dotted #fff;
     }
 
+    /* --- Workspace Window Layout Layout --- */
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 32px; /* Increased gap to give it a distinct "desktop spacing" feel */
+      width: 100%;
+      margin-top: 16px; /* Pushes the first window away from the icon grid */
+      margin-bottom: 32px; /* Adds space before hitting the bottom taskbar */
+    }
+
     /* --- Responsive App Window System --- */
     .window {
       background-color: var(--win-bg);
@@ -160,230 +161,3 @@
       font-size: 1.3rem;
       margin-bottom: 8px;
     }
-
-    .tagline {
-      font-style: italic;
-      color: #444;
-      margin-bottom: 12px;
-      font-weight: bold;
-    }
-
-    /* --- Taskbar / Footer Footer Navigation --- */
-    footer {
-      margin-top: auto;
-      background-color: var(--win-bg);
-      padding: 4px;
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      position: sticky;
-      bottom: -16px;
-      margin-left: -16px;
-      margin-right: -16px;
-      z-index: 100;
-    }
-
-    .start-btn {
-      font-weight: bold;
-      padding: 4px 12px;
-      background-color: var(--win-bg);
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      cursor: pointer;
-    }
-
-    .start-btn strong {
-      font-size: 14px;
-    }
-
-    .footer-links {
-      margin-left: auto;
-      padding: 4px 12px;
-      font-size: 12px;
-      text-decoration: none;
-      color: #000;
-    }
-
-    /* --- System Tray / Taskbar Utilities --- */
-footer {
-  justify-content: flex-start;
-}
-
-.system-tray {
-  display: flex;
-  align-items: center;
-  padding: 2px 8px;
-  background-color: var(--win-bg);
-  font-size: 12px;
-  height: 24px;
-  margin-left: 8px;
-}
-
-.tray-link {
-  color: #000;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.tray-link:hover .tray-text {
-  text-decoration: underline;
-}
-
-.tray-icon {
-  font-size: 14px;
-  animation: tray-pulse 2s infinite ease-in-out;
-}
-
-/* Subtle retro system tray notification reminder */
-@keyframes tray-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-}
-
-/* Ensure footer layout squishes cleanly on very small phone displays */
-@media (max-width: 400px) {
-  .tray-text {
-    display: none; /* Only shows the coffee cup emoji on tiny screens to save space */
-  }
-  .system-tray {
-    padding: 2px 4px;
-  }
-}
-    
-    /* Responsive Tweaks */
-    @media (max-width: 480px) {
-      body { padding: 8px; }
-      .window-body { padding: 8px; }
-      .window-inset { padding: 12px; }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Nguyen Labs</h1>
-    <p>Software Engineering &amp; Focused Productivity Utilities</p>
-  </header>
-
-  <!-- Desktop Icons (Quick Jump Links) -->
-  <nav class="desktop-grid" aria-label="Desktop Shortcut Icons">
-    <a href="#thinkread" class="desktop-icon">
-      <div class="icon-box"></div>
-      <span>ThinkRead</span>
-    </a>
-    <a href="#thinkauth" class="desktop-icon">
-      <div class="icon-box"></div>
-      <span>ThinkAuth</span>
-    </a>
-    <a href="#thinkkb" class="desktop-icon">
-      <div class="icon-box"></div>
-      <span>ThinkKB</span>
-    </a>
-    <a href="#specverify" class="desktop-icon">
-      <div class="icon-box"></div>
-      <span>SpecVerify</span>
-    </a>
-  </nav>
-
-  <!-- Showcase Architecture -->
-  <main>
-
-    <!-- ThinkRead Window -->
-    <section id="thinkread" class="window outset-border">
-      <div class="title-bar">
-        <span class="title-text">ThinkRead.exe</span>
-        <div class="title-bar-controls">
-          <button aria-label="Minimize">_</button>
-          <button aria-label="Maximize">🗖</button>
-          <button aria-label="Close">X</button>
-        </div>
-      </div>
-      <div class="window-body">
-        <h2>ThinkRead</h2>
-        <p class="tagline">Minimalist Reading Mode &amp; Technical Research Workspace</p>
-        <div class="window-inset inset-border">
-          <p>ThinkRead optimizes online reading environments by eliminating distracting layouts, advertising scripts, and complex tracking elements. Designed explicitly for technical professionals and researchers, it surfaces clean text structures and integrates inline AI-assisted deep-dive research tools directly into the browser workflow.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ThinkAuth Window -->
-    <section id="thinkauth" class="window outset-border">
-      <div class="title-bar">
-        <span class="title-text">ThinkAuth.exe</span>
-        <div class="title-bar-controls">
-          <button aria-label="Minimize">_</button>
-          <button aria-label="Maximize">🗖</button>
-          <button aria-label="Close">X</button>
-        </div>
-      </div>
-      <div class="window-body">
-        <h2>ThinkAuth</h2>
-        <p class="tagline">Enterprise Sign-In Governance &amp; Session Isolation Tool</p>
-        <div class="window-inset inset-border">
-          <p>ThinkAuth is an administrative extension built to streamline identity perimeter controls and secure workspace access. By isolating authentication contexts and structuring session tokens cleanly, it allows users to manage enterprise sign-ins without risking cross-context token leakage or breaking daily operational velocity.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ThinkKB Window -->
-    <section id="thinkkb" class="window outset-border">
-      <div class="title-bar">
-        <span class="title-text">ThinkKB.exe</span>
-        <div class="title-bar-controls">
-          <button aria-label="Minimize">_</button>
-          <button aria-label="Maximize">🗖</button>
-          <button aria-label="Close">X</button>
-        </div>
-      </div>
-      <div class="window-body">
-        <h2>ThinkKB</h2>
-        <p class="tagline">High-Efficiency Browser Knowledge Capture Engine</p>
-        <div class="window-inset inset-border">
-          <p>ThinkKB accelerates documentation workflows by allowing users to capture and structure web-based knowledge assets instantly. Utilizing local LLM integration layers, the utility parses active browser contexts to generate immediate documentation drafts and exports them seamlessly into major enterprise productivity suites like Google Docs.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SpecVerify Window -->
-    <section id="specverify" class="window outset-border">
-      <div class="title-bar">
-        <span class="title-text">SpecVerify.exe</span>
-        <div class="title-bar-controls">
-          <button aria-label="Minimize">_</button>
-          <button aria-label="Maximize">🗖</button>
-          <button aria-label="Close">X</button>
-        </div>
-      </div>
-      <div class="window-body">
-        <h2>SpecVerify</h2>
-        <p class="tagline">Configuration Specification &amp; Structural Schema Validation</p>
-        <div class="window-inset inset-border">
-          <p>SpecVerify delivers lightweight, automated validation controls directly to your technical workspace. It applies strict assertion mapping to verify structural compliance and check schema definitions locally, ensuring that local configurations match enterprise standards before deployment.</p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Responsive Taskbar Bottom Frame -->
-  <footer class="outset-border">
-    <button class="start-btn outset-border">
-      <span>💾</span>
-      <strong>Start</strong>
-    </button>
-    
-    <a href="privacy.html" class="footer-links inset-border">Privacy Center</a>
-    
-    <div class="system-tray inset-border">
-      <a href="https://buymeacoffee.com/nguyen4514" target="_blank" rel="noopener" class="tray-link" title="Support the Developer">
-        <span class="tray-icon">☕</span>
-        <span class="tray-text">Buy Me a Coffee</span>
-      </a>
-    </div>
-  </footer>
-</body>
-</html>
