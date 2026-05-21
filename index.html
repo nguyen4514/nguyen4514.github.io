@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nguyen Labs - Workspace</title>
   <style>
+
+    main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px; /* Increased gap to give it a distinct "desktop spacing" feel */
+  width: 100%;
+  margin-top: 16px; /* Pushes the first window away from the icon grid */
+  margin-bottom: 32px; /* Adds space before hitting the bottom taskbar */
+}
     /* --- Core Windows 95 Design Tokens --- */
     :root {
       --desktop-bg: #008080; /* Classic Teal */
@@ -232,7 +241,7 @@
   </nav>
 
   <!-- Showcase Architecture -->
-  <main display="flex" style="flex-direction: column; gap: 24px; width: 100%;">
+  <main>
 
     <!-- ThinkRead Window -->
     <section id="thinkread" class="window outset-border">
