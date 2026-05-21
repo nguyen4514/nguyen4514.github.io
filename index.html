@@ -205,6 +205,54 @@
       color: #000;
     }
 
+    /* --- System Tray / Taskbar Utilities --- */
+footer {
+  justify-content: flex-start;
+}
+
+.system-tray {
+  display: flex;
+  align-items: center;
+  padding: 2px 8px;
+  background-color: var(--win-bg);
+  font-size: 12px;
+  height: 24px;
+  margin-left: 8px;
+}
+
+.tray-link {
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tray-link:hover .tray-text {
+  text-decoration: underline;
+}
+
+.tray-icon {
+  font-size: 14px;
+  animation: tray-pulse 2s infinite ease-in-out;
+}
+
+/* Subtle retro system tray notification reminder */
+@keyframes tray-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* Ensure footer layout squishes cleanly on very small phone displays */
+@media (max-width: 400px) {
+  .tray-text {
+    display: none; /* Only shows the coffee cup emoji on tiny screens to save space */
+  }
+  .system-tray {
+    padding: 2px 4px;
+  }
+}
+    
     /* Responsive Tweaks */
     @media (max-width: 480px) {
       body { padding: 8px; }
