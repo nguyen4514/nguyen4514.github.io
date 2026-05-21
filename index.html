@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nguyen Labs - Workspace</title>
+  <style>
+    /* --- Core Windows 95 Design Tokens --- */
+    :root {
+      --desktop-bg: #008080; /* Classic Teal */
+      --win-bg: #c0c0c0;     /* Light Grey */
+      --win-edge-light: #fff;
+      --win-edge-shadow: #808080;
+      --win-edge-dark: #0a0a0a;
+      --title-blue: #000080;
+      --title-text: #ffffff;
+      --font-stack: "MS Sans Serif", Tahoma, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--desktop-bg);
+      font-family: var(--font-stack);
+      font-size: 14px;
+      color: var(--win-edge-dark);
+      padding: 16px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* --- Retro Bevel Borders --- */
+    .outset-border {
+      border: 2px solid;
+      border-color: var(--win-edge-light) var(--win-edge-shadow) var(--win-edge-shadow) var(--win-edge-light);
+    }
+
+    .inset-border {
+      border: 2px solid;
+      border-color: var(--win-edge-shadow) var(--win-edge-light) var(--win-edge-light) var(--win-edge-shadow);
+      background-color: #fff;
+    }
+
+    /* --- Desktop Header & Icon Grid --- */
+    header {
+      color: white;
+      text-shadow: 1px 1px var(--win-edge-dark);
+      margin-bottom: 8px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    .desktop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      gap: 20px;
+      max-width: 600px;
+    }
+
+    .desktop-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    /* CSS-only generic retro app icons */
+    .icon-box {
+      width: 32px;
+      height: 32px;
+      background: #000080;
+      margin-bottom: 6px;
+      position: relative;
+      box-shadow: 2px 2px 0px #000;
+    }
+    .icon-box::before {
+      content: "💻";
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      font-size: 20px;
+    }
+
+    .desktop-icon span {
+      padding: 2px 4px;
+      background: transparent;
+      text-shadow: 1px 1px 1px #000;
+    }
+
+    .desktop-icon:focus span {
+      background: var(--title-blue);
+      outline: 1px dotted #fff;
+    }
+
+    /* --- Responsive App Window System --- */
+    .window {
+      background-color: var(--win-bg);
+      padding: 3px;
+      width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .title-bar {
+      background: linear-gradient(90deg, var(--title-blue), #1084d0);
+      color: var(--title-text);
+      padding: 4px 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .title-bar-controls button {
+      width: 16px;
+      height: 14px;
+      font-size: 9px;
+      font-weight: bold;
+      vertical-align: middle;
+      background-color: var(--win-bg);
+      border: 1px solid;
+      border-color: var(--win-edge-light) var(--win-edge-shadow) var(--win-edge-shadow) var(--win-edge-light);
+      cursor: pointer;
+    }
+
+    .window-body {
+      padding: 16px;
+    }
+
+    .window-inset {
+      padding: 16px;
+      min-height: 100px;
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .tagline {
+      font-style: italic;
+      color: #444;
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+
+    /* --- Taskbar / Footer Footer Navigation --- */
+    footer {
+      margin-top: auto;
+      background-color: var(--win-bg);
+      padding: 4px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      position: sticky;
+      bottom: -16px;
+      margin-left: -16px;
+      margin-right: -16px;
+      z-index: 100;
+    }
+
+    .start-btn {
+      font-weight: bold;
+      padding: 4px 12px;
+      background-color: var(--win-bg);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .start-btn strong {
+      font-size: 14px;
+    }
+
+    .footer-links {
+      margin-left: auto;
+      padding: 4px 12px;
+      font-size: 12px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    /* Responsive Tweaks */
+    @media (max-width: 480px) {
+      body { padding: 8px; }
+      .window-body { padding: 8px; }
+      .window-inset { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Nguyen Labs</h1>
+    <p>Software Engineering &amp; Focused Productivity Utilities</p>
+  </header>
+
+  <!-- Desktop Icons (Quick Jump Links) -->
+  <nav class="desktop-grid" aria-label="Desktop Shortcut Icons">
+    <a href="#thinkread" class="desktop-icon">
+      <div class="icon-box"></div>
+      <span>ThinkRead</span>
+    </a>
+    <a href="#thinkauth" class="desktop-icon">
+      <div class="icon-box"></div>
+      <span>ThinkAuth</span>
+    </a>
+    <a href="#thinkkb" class="desktop-icon">
+      <div class="icon-box"></div>
+      <span>ThinkKB</span>
+    </a>
+    <a href="#specverify" class="desktop-icon">
+      <div class="icon-box"></div>
+      <span>SpecVerify</span>
+    </a>
+  </nav>
+
+  <!-- Showcase Architecture -->
+  <main display="flex" style="flex-direction: column; gap: 24px; width: 100%;">
+
+    <!-- ThinkRead Window -->
+    <section id="thinkread" class="window outset-border">
+      <div class="title-bar">
+        <span class="title-text">ThinkRead.exe</span>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize">_</button>
+          <button aria-label="Maximize">🗖</button>
+          <button aria-label="Close">X</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <h2>ThinkRead</h2>
+        <p class="tagline">Minimalist Reading Mode &amp; Technical Research Workspace</p>
+        <div class="window-inset inset-border">
+          <p>ThinkRead optimizes online reading environments by eliminating distracting layouts, advertising scripts, and complex tracking elements. Designed explicitly for technical professionals and researchers, it surfaces clean text structures and integrates inline AI-assisted deep-dive research tools directly into the browser workflow.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ThinkAuth Window -->
+    <section id="thinkauth" class="window outset-border">
+      <div class="title-bar">
+        <span class="title-text">ThinkAuth.exe</span>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize">_</button>
+          <button aria-label="Maximize">🗖</button>
+          <button aria-label="Close">X</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <h2>ThinkAuth</h2>
+        <p class="tagline">Enterprise Sign-In Governance &amp; Session Isolation Tool</p>
+        <div class="window-inset inset-border">
+          <p>ThinkAuth is an administrative extension built to streamline identity perimeter controls and secure workspace access. By isolating authentication contexts and structuring session tokens cleanly, it allows users to manage enterprise sign-ins without risking cross-context token leakage or breaking daily operational velocity.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ThinkKB Window -->
+    <section id="thinkkb" class="window outset-border">
+      <div class="title-bar">
+        <span class="title-text">ThinkKB.exe</span>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize">_</button>
+          <button aria-label="Maximize">🗖</button>
+          <button aria-label="Close">X</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <h2>ThinkKB</h2>
+        <p class="tagline">High-Efficiency Browser Knowledge Capture Engine</p>
+        <div class="window-inset inset-border">
+          <p>ThinkKB accelerates documentation workflows by allowing users to capture and structure web-based knowledge assets instantly. Utilizing local LLM integration layers, the utility parses active browser contexts to generate immediate documentation drafts and exports them seamlessly into major enterprise productivity suites like Google Docs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SpecVerify Window -->
+    <section id="specverify" class="window outset-border">
+      <div class="title-bar">
+        <span class="title-text">SpecVerify.exe</span>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize">_</button>
+          <button aria-label="Maximize">🗖</button>
+          <button aria-label="Close">X</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <h2>SpecVerify</h2>
+        <p class="tagline">Configuration Specification &amp; Structural Schema Validation</p>
+        <div class="window-inset inset-border">
+          <p>SpecVerify delivers lightweight, automated validation controls directly to your technical workspace. It applies strict assertion mapping to verify structural compliance and check schema definitions locally, ensuring that local configurations match enterprise standards before deployment.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Responsive Taskbar Bottom Frame -->
+  <footer class="outset-border">
+    <button class="start-btn outset-border">
+      <span>💾</span>
+      <strong>Start</strong>
+    </button>
+    <a href="privacy.html" class="footer-links inset-border">Privacy Center</a>
+  </footer>
+
+</body>
+</html>
