@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nguyen Labs - Privacy Center</title>
+  <style>
+    :root {
+      --desktop-bg: #008080;
+      --win-bg: #c0c0c0;
+      --win-edge-light: #fff;
+      --win-edge-shadow: #808080;
+      --win-edge-dark: #0a0a0a;
+      --title-blue: #000080;
+      --title-text: #ffffff;
+      --font-stack: "MS Sans Serif", Tahoma, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--desktop-bg);
+      font-family: var(--font-stack);
+      font-size: 14px;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .outset-border {
+      border: 2px solid;
+      border-color: var(--win-edge-light) var(--win-edge-shadow) var(--win-edge-shadow) var(--win-edge-light);
+    }
+
+    .inset-border {
+      border: 2px solid;
+      border-color: var(--win-edge-shadow) var(--win-edge-light) var(--win-edge-light) var(--win-edge-shadow);
+      background-color: #fff;
+    }
+
+    .window {
+      background-color: var(--win-bg);
+      padding: 3px;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .title-bar {
+      background: var(--title-blue);
+      color: var(--title-text);
+      padding: 4px 6px;
+      font-weight: bold;
+    }
+
+    .window-body {
+      padding: 16px;
+    }
+
+    .privacy-index {
+      margin-bottom: 24px;
+      padding: 12px;
+    }
+
+    .privacy-index h3 { margin-bottom: 8px; }
+    
+    .privacy-index ul {
+      list-style-type: none;
+      padding-left: 8px;
+    }
+
+    .privacy-index li {
+      margin-bottom: 6px;
+    }
+
+    .privacy-index a {
+      color: #0000ed;
+      text-decoration: underline;
+    }
+
+    .policy-content {
+      padding: 16px;
+      max-height: 450px;
+      overflow-y: scroll;
+      line-height: 1.6;
+    }
+
+    .policy-section {
+      margin-bottom: 28px;
+    }
+
+    .policy-section:not(:last-child) {
+      border-bottom: 1px dashed var(--win-edge-shadow);
+      padding-bottom: 24px;
+    }
+
+    h2 { font-size: 1.4rem; margin-bottom: 4px; }
+    h3 { font-size: 1.1rem; margin-top: 12px; margin-bottom: 4px; }
+    p { margin-bottom: 8px; }
+    
+    .back-btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 6px 16px;
+      background-color: var(--win-bg);
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="window outset-border">
+    <div class="title-bar">Privacy_Policy_Manager.exe</div>
+    
+    <div class="window-body">
+      <h2>Nguyen Labs Privacy Center</h2>
+      <p style="margin-bottom: 16px;">Select an application to view its compliance and data privacy statement.</p>
+
+      <!-- Document Navigation Index -->
+      <div class="privacy-index inset-border">
+        <h3>📂 Applications</h3>
+        <ul>
+          <li>🗎 <a href="#thinkread">ThinkRead Privacy Policy</a></li>
+          <li>🗎 <a href="#thinkauth">ThinkAuth Privacy Policy</a></li>
+          <li>🗎 <a href="#thinkkb">ThinkKB Privacy Policy</a></li>
+          <li>🗎 <a href="#specverify">SpecVerify Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Policy Text Viewport -->
+      <div class="policy-content inset-border">
+        
+        <!-- ThinkRead Section -->
+        <section id="thinkread" class="policy-section">
+          <h3>ThinkRead Privacy Policy</h3>
+          <p><strong>Last Updated: May 2026</strong></p>
+          <p>ThinkRead operates strictly as a local-client processing utility. We do not host central infrastructure to collect, intercept, transmit, or monetize your parsing activities or reading logs.</p>
+          <h3>Data Governance &amp; Security</h3>
+          <p>All data structural extraction and sanitation operations process entirely within your application container sandbox. External network transmission only occurs if you intentionally configure specific personal API endpoint strings for LLM operations.</p>
+        </section>
+
+        <!-- ThinkAuth Section -->
+        <section id="thinkauth" class="policy-section">
+          <h3>ThinkAuth Privacy Policy</h3>
+          <p><strong>Last Updated: May 2026</strong></p>
+          <p>ThinkAuth manages web session states and application authentication boundaries exclusively inside secure, runtime-isolated contexts.</p>
+          <h3>Credential &amp; Token Handling</h3>
+          <p>Session tokens remain stored strictly within your browser's encrypted local data layer. No credentials, tokens, or cryptographic hashes are shared with external analytics software or remote servers.</p>
+        </section>
+
+        <!-- ThinkKB Section -->
+        <section id="thinkkb" class="policy-section">
+          <h3>ThinkKB Privacy Policy</h3>
+          <p><strong>Last Updated: May 2026</strong></p>
+          <p>ThinkKB facilitates on-demand content ingestion and documentation drafting loops solely under explicit end-user control.</p>
+          <h3>Third-Party API Integration</h3>
+          <p>When connecting with external enterprise platform APIs (such as Google Workspace), data routing is handled directly through secure OAuth channels connecting your device client to the provider. No intermediate backend systems log or cache your documents.</p>
+        </section>
+
+        <!-- SpecVerify Section -->
+        <section id="specverify" class="policy-section">
+          <h3>SpecVerify Privacy Policy</h3>
+          <p><strong>Last Updated: May 2026</strong></p>
+          <p>SpecVerify parses structure profiles and system validation metrics locally on your device.</p>
+          <h3>Information Security</h3>
+          <p>Schemas and assertion rules are never shared. All code evaluation blocks execute purely on-device with zero telemetry or remote monitoring requirements.</p>
+        </section>
+
+      </div>
+
+      <a href="index.html" class="back-btn outset-border">◀ Return to Desktop</a>
+    </div>
+  </div>
+
+</body>
+</html>
