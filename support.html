@@ -133,4 +133,240 @@
     .matrix-item strong {
       color: var(--title-blue);
       display: block;
-      margin-bottom
+      margin-bottom: 2px;
+    }
+
+    /* --- Form Grid & Input Styling --- */
+    form {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 6px;
+      font-family: monospace; /* Legacy code/system configuration field theme */
+      font-size: 13px;
+      border: 2px solid;
+      border-color: var(--win-edge-shadow) var(--win-edge-light) var(--win-edge-light) var(--win-edge-shadow);
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      background-color: #ffffe0; /* Classic yellow system text focus tint */
+    }
+
+    .submit-btn {
+      align-self: flex-start;
+      font-family: var(--font-stack);
+      font-weight: bold;
+      padding: 6px 20px;
+      background-color: var(--win-bg);
+      border: 2px solid;
+      border-color: var(--win-edge-light) var(--win-edge-shadow) var(--win-edge-shadow) var(--win-edge-light);
+      cursor: pointer;
+    }
+
+    .submit-btn:active {
+      border-color: var(--win-edge-shadow) var(--win-edge-light) var(--win-edge-light) var(--win-edge-shadow);
+      padding: 7px 19px 5px 21px; /* 1px tracking offset simulation when clicked */
+    }
+
+    /* --- Fixed Taskbar Framework --- */
+    footer {
+      background-color: var(--win-bg);
+      padding: 4px;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: 38px;
+      border-top: 2px solid var(--win-edge-light);
+    }
+
+    .start-btn {
+      font-weight: bold;
+      padding: 4px 12px;
+      background-color: var(--win-bg);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      height: 100%;
+    }
+
+    .start-btn strong {
+      font-size: 14px;
+    }
+
+    .footer-links {
+      margin-left: auto;
+      padding: 4px 12px;
+      font-size: 12px;
+      text-decoration: none;
+      color: #000;
+      white-space: nowrap;
+    }
+
+    /* --- System Tray Structure --- */
+    .system-tray {
+      display: flex;
+      align-items: center;
+      padding: 2px 8px;
+      background-color: var(--win-bg);
+      font-size: 12px;
+      height: 100%;
+      min-width: max-content;
+    }
+
+    .tray-link {
+      color: #000;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .tray-link:hover .tray-text {
+      text-decoration: underline;
+    }
+
+    .tray-icon {
+      font-size: 14px;
+    }
+
+    /* --- Responsive System Breakpoints --- */
+    @media (max-width: 480px) {
+      body { padding: 8px; }
+      .window-body { padding: 8px; }
+      .window-inset { padding: 12px; }
+    }
+
+    @media (max-width: 400px) {
+      .tray-text {
+        display: none;
+      }
+      .system-tray {
+        padding: 2px 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <div class="window outset-border">
+      <div class="title-bar">
+        <span class="title-text">System_Support_Wizard.exe</span>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize">_</button>
+          <button aria-label="Maximize">🗖</button>
+          <button aria-label="Close">X</button>
+        </div>
+      </div>
+      
+      <div class="window-body">
+        <h1>Technical Infrastructure Support</h1>
+        <p style="color: #444; margin-bottom: 16px; font-weight: bold;">On-demand systems engineering, configuration optimization, and local infrastructure diagnostics.</p>
+        
+        <!-- Capabilities Framework Context Block -->
+        <div class="window-inset inset-border">
+          <h2>Core Capabilities Matrix</h2>
+          <div class="service-matrix">
+            <div class="matrix-item inset-border">
+              <strong>⚙️ OS Deployment &amp; Management</strong>
+              Linux ecosystem stabilization (Ubuntu environment builds), custom ROM provisioning, and endpoint deployment setups.
+            </div>
+            <div class="matrix-item inset-border">
+              <strong>🌐 Networking &amp; Identity Perimeters</strong>
+              Network routing evaluation, workspace integrations, identity context containment, and authorization profiles.
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Dispatch Form -->
+        <div class="window-inset inset-border">
+          <h2>Initialize Support Request Dispatch</h2>
+          <p style="font-size: 12px; color: #555;">Please detail your structural system anomaly below to register a priority service ticket.</p>
+          
+          <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Operator Name:</label>
+                <input type="text" id="name" name="name" required placeholder="e.g., John Doe">
+              </div>
+              <div class="form-group">
+                <label for="email">Communication Node (Email):</label>
+                <input type="email" id="email" name="_replyto" required placeholder="e.g., operator@domain.com">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="scope">Environment Scope Class:</label>
+              <select id="scope" name="scope">
+                <option value="infrastructure">Systems Engineering &amp; Linux Environments</option>
+                <option value="network">Network Routing &amp; Identity Management</option>
+                <option value="extension">Browser Extensions &amp; Validation Frameworks</option>
+                <option value="general">General Infrastructure Diagnostics</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Incident Log / Requirement Specifications:</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Describe system behavior, environmental parameters, or support parameters here..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn outset-border">Transmit Ticket</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Unified Footer Taskbar Frame System -->
+  <footer class="outset-border">
+    <div class="start-btn outset-border" onclick="window.location.href='index.html'">
+      <span>💾</span>
+      <strong>Start</strong>
+    </div>
+    
+    <a href="privacy.html" class="footer-links inset-border">Privacy Center</a>
+    
+    <div class="system-tray inset-border">
+      <a href="https://buymeacoffee.com/nguyen4514" target="_blank" rel="noopener" class="tray-link" title="Support the Developer">
+        <span class="tray-icon">☕</span>
+        <span class="tray-text">Buy Me a Coffee</span>
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
