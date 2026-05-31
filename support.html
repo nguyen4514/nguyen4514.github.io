@@ -1,168 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local IT Support & Systems Engineering | San Jose</title>
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --border: #334155;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nguyen Labs - Technical Support</title>
+  <style>
+    /* --- Core Windows 95 Design Tokens --- */
+    :root {
+      --desktop-bg: #008080; /* Classic Teal */
+      --win-bg: #c0c0c0;     /* Light Grey */
+      --win-edge-light: #fff;
+      --win-edge-shadow: #808080;
+      --win-edge-dark: #0a0a0a;
+      --title-blue: #000080;
+      --title-text: #ffffff;
+      --font-stack: "MS Sans Serif", Tahoma, Arial, sans-serif;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
+    body {
+      background-color: var(--desktop-bg);
+      font-family: var(--font-stack);
+      font-size: 14px;
+      color: var(--win-edge-dark);
+      padding: 16px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 2rem;
-        }
+    /* --- Retro Bevel Borders --- */
+    .outset-border {
+      border: 2px solid;
+      border-color: var(--win-edge-light) var(--win-edge-shadow) var(--win-edge-shadow) var(--win-edge-light);
+    }
 
-        h1 { font-size: 2.25rem; margin-bottom: 0.5rem; color: var(--text-main); }
-        h2 { font-size: 1.5rem; color: var(--accent); margin-top: 2rem; }
-        .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+    .inset-border {
+      border: 2px solid;
+      border-color: var(--win-edge-shadow) var(--win-edge-light) var(--win-edge-light) var(--win-edge-shadow);
+      background-color: #fff;
+    }
 
-        .intro-box {
-            background: var(--card-bg);
-            border-left: 4px solid var(--accent);
-            padding: 1.5rem;
-            border-radius: 0.375rem;
-            margin-bottom: 2.5rem;
-        }
+    /* --- Workspace Layout Container --- */
+    main {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 24px;
+      margin-bottom: 60px; /* Space for fixed taskbar */
+    }
 
-        .tier-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-        }
+    /* --- Responsive App Window System --- */
+    .window {
+      background-color: var(--win-bg);
+      padding: 3px;
+      width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
 
-        @media (min-width: 768px) {
-            .tier-grid { grid-template-columns: 1fr 1fr; }
-        }
+    .title-bar {
+      background: linear-gradient(90deg, var(--title-blue), #1084d0);
+      color: var(--title-text);
+      padding: 4px 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+    }
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-        }
+    .title-bar-controls button {
+      width: 16px;
+      height: 14px;
+      font-size: 9px;
+      font-weight: bold;
+      vertical-align: middle;
+      background-color: var(--win-bg);
+      border: 1px solid;
+      border-color: var(--win-edge-light) var(--win-edge-shadow) var(--win-edge-shadow) var(--win-edge-light);
+      cursor: pointer;
+    }
 
-        .card.full-width {
-            grid-column: 1 / -1;
-            border: 1px solid var(--accent);
-        }
+    .window-body {
+      padding: 16px;
+    }
 
-        .price {
-            font-size: 1.75rem;
-            font-weight: bold;
-            color: var(--text-main);
-            margin: 0.5rem 0 1rem 0;
-        }
+    .window-inset {
+      padding: 16px;
+      background: #fff;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
 
-        ul { padding-left: 1.25rem; margin: 0; }
-        li { margin-bottom: 0.5rem; color: var(--text-muted); }
-        li strong { color: var(--text-main); }
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+    }
 
-        .cta-section {
-            text-align: center;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 2.5rem;
-            border-radius: 0.5rem;
-            margin-top: 3rem;
-        }
+    h2 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      margin-top: 8px;
+      color: var(--win-edge-dark);
+      border-bottom: 1px solid var(--win-edge-shadow);
+      padding-bottom: 4px;
+    }
 
-        .phone-btn {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--bg-color);
-            font-weight: bold;
-            padding: 0.75rem 2rem;
-            border-radius: 0.375rem;
-            text-decoration: none;
-            font-size: 1.25rem;
-            margin-top: 1rem;
-            transition: opacity 0.2s;
-        }
+    p {
+      margin-bottom: 12px;
+    }
 
-        .phone-btn:hover { opacity: 0.9; }
-        .back-link { display: block; text-align: center; margin-top: 2rem; color: var(--text-muted); text-decoration: none; }
-        .back-link:hover { color: var(--accent); }
-    </style>
-</head>
-<body>
+    /* --- System Support Capabilities Grid --- */
+    .service-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
 
-<div class="container">
-    <header>
-        <h1>Dennis IT Support</h1>
-        <p class="subtitle">Senior-Grade Technical Solutions & Infrastructure Setup</p>
-    </header>
+    .matrix-item {
+      padding: 10px;
+      background: #f5f5f5;
+      font-size: 13px;
+    }
 
-    <div class="intro-box">
-        <strong>Stressed out by your technology?</strong> Bringing over 15 years of senior engineering experience straight to your door across San Jose and the South Bay. No corporate overhead, no locking contracts, and no confusing tech jargon—just transparent, upfront technical expertise.
-    </div>
-
-    <div class="tier-grid">
-        <!-- Residential Tier -->
-        <div class="card">
-            <h2>🏡 Home & Remote Office</h2>
-            <div class="price">$75 / Hour <span style="font-size: 1rem; color: var(--text-muted); font-weight: normal;">(1-Hr Minimum)</span></div>
-            <ul>
-                <li><strong>Slow Computers:</strong> Tune-ups, malware removal, hardware upgrades, and secure data migration.</li>
-                <li><strong>Home Wi-Fi:</strong> Eliminating dead zones, coverage extension, and stability fixes.</li>
-                <li><strong>Connected Tech:</strong> Stubborn printer configuration, smart TVs, and smart home setups.</li>
-                <li><strong>Patient 1-on-1 Tutoring:</strong> Comfortable, jargon-free guidance on apps, software, or devices.</li>
-            </ul>
-        </div>
-
-        <!-- Business Tier -->
-        <div class="card">
-            <h2>🏢 Small Business Services</h2>
-            <div class="price">$125 / Hour <span style="font-size: 1rem; color: var(--text-muted); font-weight: normal;">(2-Hr Minimum)</span></div>
-            <ul>
-                <li><strong>Network Infrastructure:</strong> Secure office Wi-Fi deployment, evaluations, and guest networks.</li>
-                <li><strong>Secure Remote Access:</strong> Encrypted mesh networks (VPN) for secure remote employee access.</li>
-                <li><strong>Device Management (MDM):</strong> Centralized management dashboards (Intune, Jamf) to track and secure laptops.</li>
-                <li><strong>Workstation Rollouts:</strong> Deployment and staging of office hardware, computers, and multi-function printers.</li>
-            </ul>
-        </div>
-
-        <!-- Flat-Rate Tier -->
-        <div class="card full-width">
-            <h2>🚀 Flat-Rate Monthly IT Plans</h2>
-            <p style="color: var(--text-muted); margin-top: 0;"><strong>Predictable "Buffet-Style" Support for Small Business Storefronts & Offices</strong></p>
-            <p style="color: var(--text-muted);">Want a dedicated "Virtual IT Department" keeping your business running smoothly without full-time payroll costs? I offer flat monthly maintenance packages per workstation that include background security updates, continuous data backup health monitoring, and unlimited weekday remote support for daily technical glitches.</p>
-        </div>
-    </div>
-
-    <div class="cta-section">
-        <h3>Need a Tech Rescue?</h3>
-        <p style="color: var(--text-muted); margin: 0 0 1rem 0;">Standard Hours: 7:00 AM – 4:00 PM, Monday through Friday. <br><em>(Evening and weekend requests available by appointment for emergencies).</em></p>
-        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Call or text directly with a description of what you need fixed for a transparent estimate.</p>
-        <a href="tel:4086589264" class="phone-btn">📞 (408) 658-9264</a>
-    </div>
-
-    <a href="/" class="back-link">← Back to Main Portfolio</a>
-</div>
-
-</body>
-</html>
+    .matrix-item strong {
+      color: var(--title-blue);
+      display: block;
+      margin-bottom
