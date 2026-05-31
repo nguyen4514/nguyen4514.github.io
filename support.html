@@ -5,6 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Local IT Support &amp; Systems Engineering | San Jose</title>
   <style>
+
+    /* --- Restored & Scoped Icon Navigation Grid --- */
+    .desktop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      gap: 20px;
+      max-width: 600px;
+      margin-bottom: 32px;
+    }
+
+    .desktop-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: white !important; /* Forces text to remain white over teal background */
+      text-decoration: none;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .desktop-icon span {
+      padding: 2px 4px;
+      background: transparent;
+      text-shadow: 1px 1px 1px #000;
+      white-space: nowrap;
+    }
+
+    .desktop-icon:focus span {
+      background: var(--title-blue);
+      outline: 1px dotted #fff;
+    }
     /* --- Core Windows 95 Design Tokens --- */
     :root {
       --desktop-bg: #008080; /* Classic Teal */
