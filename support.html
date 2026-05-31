@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nguyen Labs - Local Tech Support</title>
+  <title>Local IT Support &amp; Systems Engineering | San Jose</title>
   <style>
     /* --- Core Windows 95 Design Tokens --- */
     :root {
@@ -52,7 +52,7 @@
       flex-direction: column;
       width: 100%;
       margin-top: 24px;
-      margin-bottom: 60px; /* Space for fixed taskbar */
+      margin-bottom: 60px; /* Space for the fixed taskbar */
     }
 
     /* --- Responsive App Window System --- */
@@ -60,7 +60,7 @@
       background-color: var(--win-bg);
       padding: 3px;
       width: 100%;
-      max-width: 650px;
+      max-width: 750px;
       margin: 0 auto;
       box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
     }
@@ -100,86 +100,84 @@
 
     h1 {
       font-size: 1.4rem;
-      margin-bottom: 12px;
+      margin-bottom: 4px;
     }
 
     h2 {
       font-size: 1.1rem;
       margin-bottom: 8px;
-      margin-top: 12px;
-      color: var(--win-edge-dark);
-      border-bottom: 1px solid var(--win-edge-shadow);
-      padding-bottom: 4px;
+      margin-top: 4px;
+      color: var(--title-blue);
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
     }
 
     p {
       margin-bottom: 12px;
     }
 
+    /* --- Service Layout Configuration Grid --- */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .tier-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .card {
+      padding: 14px;
+      background: #fff;
+    }
+
+    .card.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .price {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #000;
+      margin: 4px 0 12px 0;
+      border-bottom: 1px dashed var(--win-edge-shadow);
+      padding-bottom: 4px;
+    }
+
     ul {
-      margin-bottom: 12px;
-      padding-left: 20px;
+      padding-left: 16px;
     }
 
     li {
-      margin-bottom: 4px;
-    }
-
-    /* --- Form Grid & Input Styling --- */
-    form {
-      margin-top: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    label {
-      font-weight: bold;
-      font-size: 12px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    textarea {
-      width: 100%;
-      padding: 6px;
-      font-family: monospace;
+      margin-bottom: 8px;
       font-size: 13px;
-      border: 2px solid;
-      border-color: var(--win-edge-shadow) var(--win-edge-light) var(--win-edge-light) var(--win-edge-shadow);
-      outline: none;
     }
 
-    input:focus, textarea:focus {
-      background-color: #ffffe0;
-    }
-
-    .submit-btn {
-      align-self: flex-start;
-      font-family: var(--font-stack);
-      font-weight: bold;
-      padding: 6px 20px;
+    /* --- Retro Call to Action Elements --- */
+    .cta-section {
+      text-align: center;
+      padding: 20px;
       background-color: var(--win-bg);
-      border: 2px solid;
-      border-color: var(--win-edge-light) var(--win-edge-shadow) var(--win-edge-shadow) var(--win-edge-light);
-      cursor: pointer;
     }
 
-    .submit-btn:active {
+    .phone-btn {
+      display: inline-block;
+      background: var(--win-bg);
+      color: #000;
+      font-weight: bold;
+      padding: 8px 24px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin-top: 8px;
+    }
+
+    .phone-btn:active {
       border-color: var(--win-edge-shadow) var(--win-edge-light) var(--win-edge-light) var(--win-edge-shadow);
-      padding: 7px 19px 5px 21px;
     }
 
     /* --- Fixed Taskbar Framework --- */
@@ -273,7 +271,7 @@
   <main>
     <div class="window outset-border">
       <div class="title-bar">
-        <span class="title-text">Local_Support_Wizard.exe</span>
+        <span class="title-text">Dennis_IT_Support.exe</span>
         <div class="title-bar-controls">
           <button aria-label="Minimize">_</button>
           <button aria-label="Maximize">🗖</button>
@@ -282,54 +280,63 @@
       </div>
       
       <div class="window-body">
-        <h1>Local Support Offerings</h1>
+        <h1>Dennis IT Support</h1>
+        <p style="color: #444; margin-bottom: 16px; font-weight: bold;">Senior-Grade Technical Solutions &amp; Infrastructure Setup</p>
         
+        <!-- Intro Box -->
         <div class="window-inset inset-border">
-          <p>Need tech help? I offer on-site support for your home or business. My rates are affordable, and I'll get the job done right.</p>
+          <p><strong>Stressed out by your technology?</strong> Bringing over 15 years of senior engineering experience straight to your door across San Jose and the South Bay. No corporate overhead, no locking contracts, and no confusing tech jargon—just transparent, upfront technical expertise.</p>
+        </div>
+
+        <!-- Tiers Container Box -->
+        <div class="tier-grid">
           
-          <h2>Services Offered</h2>
-          <ul>
-            <li>Computer repair and troubleshooting</li>
-            <li>Network setup and optimization</li>
-            <li>Smart home device configuration</li>
-            <li>Data backup and recovery</li>
-            <li>Virus and malware removal</li>
-          </ul>
+          <!-- Home & Remote Office -->
+          <div class="card inset-border">
+            <h2>🏡 Home &amp; Remote Office</h2>
+            <div class="price">$75 / Hour <span style="font-size: 0.85rem; color: #555; font-weight: normal;">(1-Hr Minimum)</span></div>
+            <ul>
+              <li><strong>Slow Computers:</strong> Tune-ups, malware removal, hardware upgrades, and secure data migration.</li>
+              <li><strong>Home Wi-Fi:</strong> Eliminating dead zones, coverage extension, and stability fixes.</li>
+              <li><strong>Connected Tech:</strong> Stubborn printer configuration, smart TVs, and smart home setups.</li>
+              <li><strong>Patient 1-on-1 Tutoring:</strong> Comfortable, jargon-free guidance on apps, software, or devices.</li>
+            </ul>
+          </div>
+
+          <!-- Small Business Services -->
+          <div class="card inset-border">
+            <h2>🏢 Small Business Services</h2>
+            <div class="price">$125 / Hour <span style="font-size: 0.85rem; color: #555; font-weight: normal;">(2-Hr Minimum)</span></div>
+            <ul>
+              <li><strong>Network Infrastructure:</strong> Secure office Wi-Fi deployment, evaluations, and guest networks.</li>
+              <li><strong>Secure Remote Access:</strong> Encrypted mesh networks (VPN) for secure remote employee access.</li>
+              <li><strong>Device Management (MDM):</strong> Centralized management dashboards (Intune, Jamf) to track and secure laptops.</li>
+              <li><strong>Workstation Rollouts:</strong> Deployment and staging of office hardware, computers, and multi-function printers.</li>
+            </ul>
+          </div>
+
+          <!-- Flat-Rate Monthly Plans -->
+          <div class="card full-width inset-border">
+            <h2>🚀 Flat-Rate Monthly IT Plans</h2>
+            <p style="margin-top: 4px; margin-bottom: 6px;"><strong>Predictable "Buffet-Style" Support for Small Business Storefronts &amp; Offices</strong></p>
+            <p style="color: #333; font-size: 13px;">Want a dedicated "Virtual IT Department" keeping your business running smoothly without full-time payroll costs? I offer flat monthly maintenance packages per workstation that include background security updates, continuous data backup health monitoring, and unlimited weekday remote support for daily technical glitches.</p>
+          </div>
+
         </div>
 
-        <div class="window-inset inset-border">
-          <h2>Pricing</h2>
-          <p>My base rate is <strong>$50/hour</strong> with a 1-hour minimum. For larger projects, I can provide a flat-rate estimate.</p>
+        <!-- CTA Rescue Frame -->
+        <div class="cta-section inset-border">
+          <h3>Need a Tech Rescue?</h3>
+          <p style="color: #444; font-size: 13px; margin: 4px 0 8px 0;">Standard Hours: 7:00 AM – 4:00 PM, Monday through Friday. <br><em>(Evening and weekend requests available by appointment for emergencies).</em></p>
+          <p style="color: #444; font-size: 13px; margin-bottom: 12px;">Call or text directly with a description of what you need fixed for a transparent estimate.</p>
+          <a href="tel:4086589264" class="phone-btn outset-border">📞 (408) 658-9264</a>
         </div>
 
-        <div class="window-inset inset-border">
-          <h2>Contact Me</h2>
-          <p style="font-size: 12px; color: #555; margin-bottom: 8px;">Fill out the form below to get in touch about your tech support needs.</p>
-          
-          <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
-            <div class="form-grid">
-              <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="_replyto" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="message">How can I help you?</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn outset-border">Submit Request</button>
-          </form>
-        </div>
       </div>
     </div>
   </main>
 
+  <!-- Taskbar Navigation Frame System -->
   <footer class="outset-border">
     <div class="start-btn outset-border" onclick="window.location.href='index.html'">
       <span>💾</span>
