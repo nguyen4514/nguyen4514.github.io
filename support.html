@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nguyen Labs - Technical Support</title>
+  <title>Nguyen Labs - Local Tech Support</title>
   <style>
     /* --- Core Windows 95 Design Tokens --- */
     :root {
@@ -100,13 +100,13 @@
 
     h1 {
       font-size: 1.4rem;
-      margin-bottom: 4px;
+      margin-bottom: 12px;
     }
 
     h2 {
       font-size: 1.1rem;
       margin-bottom: 8px;
-      margin-top: 8px;
+      margin-top: 12px;
       color: var(--win-edge-dark);
       border-bottom: 1px solid var(--win-edge-shadow);
       padding-bottom: 4px;
@@ -116,24 +116,13 @@
       margin-bottom: 12px;
     }
 
-    /* --- System Support Capabilities Grid --- */
-    .service-matrix {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 12px;
-      margin-top: 12px;
+    ul {
+      margin-bottom: 12px;
+      padding-left: 20px;
     }
 
-    .matrix-item {
-      padding: 10px;
-      background: #f5f5f5;
-      font-size: 13px;
-    }
-
-    .matrix-item strong {
-      color: var(--title-blue);
-      display: block;
-      margin-bottom: 2px;
+    li {
+      margin-bottom: 4px;
     }
 
     /* --- Form Grid & Input Styling --- */
@@ -163,19 +152,18 @@
 
     input[type="text"],
     input[type="email"],
-    select,
     textarea {
       width: 100%;
       padding: 6px;
-      font-family: monospace; /* Legacy code/system configuration field theme */
+      font-family: monospace;
       font-size: 13px;
       border: 2px solid;
       border-color: var(--win-edge-shadow) var(--win-edge-light) var(--win-edge-light) var(--win-edge-shadow);
       outline: none;
     }
 
-    input:focus, select:focus, textarea:focus {
-      background-color: #ffffe0; /* Classic yellow system text focus tint */
+    input:focus, textarea:focus {
+      background-color: #ffffe0;
     }
 
     .submit-btn {
@@ -191,7 +179,7 @@
 
     .submit-btn:active {
       border-color: var(--win-edge-shadow) var(--win-edge-light) var(--win-edge-light) var(--win-edge-shadow);
-      padding: 7px 19px 5px 21px; /* 1px tracking offset simulation when clicked */
+      padding: 7px 19px 5px 21px;
     }
 
     /* --- Fixed Taskbar Framework --- */
@@ -285,7 +273,7 @@
   <main>
     <div class="window outset-border">
       <div class="title-bar">
-        <span class="title-text">System_Support_Wizard.exe</span>
+        <span class="title-text">Local_Support_Wizard.exe</span>
         <div class="title-bar-controls">
           <button aria-label="Minimize">_</button>
           <button aria-label="Maximize">🗖</button>
@@ -294,64 +282,54 @@
       </div>
       
       <div class="window-body">
-        <h1>Technical Infrastructure Support</h1>
-        <p style="color: #444; margin-bottom: 16px; font-weight: bold;">On-demand systems engineering, configuration optimization, and local infrastructure diagnostics.</p>
+        <h1>Local Support Offerings</h1>
         
-        <!-- Capabilities Framework Context Block -->
         <div class="window-inset inset-border">
-          <h2>Core Capabilities Matrix</h2>
-          <div class="service-matrix">
-            <div class="matrix-item inset-border">
-              <strong>⚙️ OS Deployment &amp; Management</strong>
-              Linux ecosystem stabilization (Ubuntu environment builds), custom ROM provisioning, and endpoint deployment setups.
-            </div>
-            <div class="matrix-item inset-border">
-              <strong>🌐 Networking &amp; Identity Perimeters</strong>
-              Network routing evaluation, workspace integrations, identity context containment, and authorization profiles.
-            </div>
-          </div>
+          <p>Need tech help? I offer on-site support for your home or business. My rates are affordable, and I'll get the job done right.</p>
+          
+          <h2>Services Offered</h2>
+          <ul>
+            <li>Computer repair and troubleshooting</li>
+            <li>Network setup and optimization</li>
+            <li>Smart home device configuration</li>
+            <li>Data backup and recovery</li>
+            <li>Virus and malware removal</li>
+          </ul>
         </div>
 
-        <!-- Interactive Dispatch Form -->
         <div class="window-inset inset-border">
-          <h2>Initialize Support Request Dispatch</h2>
-          <p style="font-size: 12px; color: #555;">Please detail your structural system anomaly below to register a priority service ticket.</p>
+          <h2>Pricing</h2>
+          <p>My base rate is <strong>$50/hour</strong> with a 1-hour minimum. For larger projects, I can provide a flat-rate estimate.</p>
+        </div>
+
+        <div class="window-inset inset-border">
+          <h2>Contact Me</h2>
+          <p style="font-size: 12px; color: #555; margin-bottom: 8px;">Fill out the form below to get in touch about your tech support needs.</p>
           
           <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
             <div class="form-grid">
               <div class="form-group">
-                <label for="name">Operator Name:</label>
-                <input type="text" id="name" name="name" required placeholder="e.g., John Doe">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
               </div>
               <div class="form-group">
-                <label for="email">Communication Node (Email):</label>
-                <input type="email" id="email" name="_replyto" required placeholder="e.g., operator@domain.com">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="_replyto" required>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="scope">Environment Scope Class:</label>
-              <select id="scope" name="scope">
-                <option value="infrastructure">Systems Engineering &amp; Linux Environments</option>
-                <option value="network">Network Routing &amp; Identity Management</option>
-                <option value="extension">Browser Extensions &amp; Validation Frameworks</option>
-                <option value="general">General Infrastructure Diagnostics</option>
-              </select>
+              <label for="message">How can I help you?</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
             </div>
 
-            <div class="form-group">
-              <label for="message">Incident Log / Requirement Specifications:</label>
-              <textarea id="message" name="message" rows="5" required placeholder="Describe system behavior, environmental parameters, or support parameters here..."></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn outset-border">Transmit Ticket</button>
+            <button type="submit" class="submit-btn outset-border">Submit Request</button>
           </form>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- Unified Footer Taskbar Frame System -->
   <footer class="outset-border">
     <div class="start-btn outset-border" onclick="window.location.href='index.html'">
       <span>💾</span>
