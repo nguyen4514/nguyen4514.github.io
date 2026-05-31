@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local IT Support & Systems Engineering | San Jose</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2rem;
+        }
+
+        h1 { font-size: 2.25rem; margin-bottom: 0.5rem; color: var(--text-main); }
+        h2 { font-size: 1.5rem; color: var(--accent); margin-top: 2rem; }
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+
+        .intro-box {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 0.375rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .tier-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .tier-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .card.full-width {
+            grid-column: 1 / -1;
+            border: 1px solid var(--accent);
+        }
+
+        .price {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: var(--text-main);
+            margin: 0.5rem 0 1rem 0;
+        }
+
+        ul { padding-left: 1.25rem; margin: 0; }
+        li { margin-bottom: 0.5rem; color: var(--text-muted); }
+        li strong { color: var(--text-main); }
+
+        .cta-section {
+            text-align: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        .phone-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg-color);
+            font-weight: bold;
+            padding: 0.75rem 2rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            font-size: 1.25rem;
+            margin-top: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .phone-btn:hover { opacity: 0.9; }
+        .back-link { display: block; text-align: center; margin-top: 2rem; color: var(--text-muted); text-decoration: none; }
+        .back-link:hover { color: var(--accent); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Dennis IT Support</h1>
+        <p class="subtitle">Senior-Grade Technical Solutions & Infrastructure Setup</p>
+    </header>
+
+    <div class="intro-box">
+        <strong>Stressed out by your technology?</strong> Bringing over 15 years of senior engineering experience straight to your door across San Jose and the South Bay. No corporate overhead, no locking contracts, and no confusing tech jargon—just transparent, upfront technical expertise.
+    </div>
+
+    <div class="tier-grid">
+        <!-- Residential Tier -->
+        <div class="card">
+            <h2>🏡 Home & Remote Office</h2>
+            <div class="price">$75 / Hour <span style="font-size: 1rem; color: var(--text-muted); font-weight: normal;">(1-Hr Minimum)</span></div>
+            <ul>
+                <li><strong>Slow Computers:</strong> Tune-ups, malware removal, hardware upgrades, and secure data migration.</li>
+                <li><strong>Home Wi-Fi:</strong> Eliminating dead zones, coverage extension, and stability fixes.</li>
+                <li><strong>Connected Tech:</strong> Stubborn printer configuration, smart TVs, and smart home setups.</li>
+                <li><strong>Patient 1-on-1 Tutoring:</strong> Comfortable, jargon-free guidance on apps, software, or devices.</li>
+            </ul>
+        </div>
+
+        <!-- Business Tier -->
+        <div class="card">
+            <h2>🏢 Small Business Services</h2>
+            <div class="price">$125 / Hour <span style="font-size: 1rem; color: var(--text-muted); font-weight: normal;">(2-Hr Minimum)</span></div>
+            <ul>
+                <li><strong>Network Infrastructure:</strong> Secure office Wi-Fi deployment, evaluations, and guest networks.</li>
+                <li><strong>Secure Remote Access:</strong> Encrypted mesh networks (VPN) for secure remote employee access.</li>
+                <li><strong>Device Management (MDM):</strong> Centralized management dashboards (Intune, Jamf) to track and secure laptops.</li>
+                <li><strong>Workstation Rollouts:</strong> Deployment and staging of office hardware, computers, and multi-function printers.</li>
+            </ul>
+        </div>
+
+        <!-- Flat-Rate Tier -->
+        <div class="card full-width">
+            <h2>🚀 Flat-Rate Monthly IT Plans</h2>
+            <p style="color: var(--text-muted); margin-top: 0;"><strong>Predictable "Buffet-Style" Support for Small Business Storefronts & Offices</strong></p>
+            <p style="color: var(--text-muted);">Want a dedicated "Virtual IT Department" keeping your business running smoothly without full-time payroll costs? I offer flat monthly maintenance packages per workstation that include background security updates, continuous data backup health monitoring, and unlimited weekday remote support for daily technical glitches.</p>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h3>Need a Tech Rescue?</h3>
+        <p style="color: var(--text-muted); margin: 0 0 1rem 0;">Standard Hours: 7:00 AM – 4:00 PM, Monday through Friday. <br><em>(Evening and weekend requests available by appointment for emergencies).</em></p>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Call or text directly with a description of what you need fixed for a transparent estimate.</p>
+        <a href="tel:4086589264" class="phone-btn">📞 (408) 658-9264</a>
+    </div>
+
+    <a href="/" class="back-link">← Back to Main Portfolio</a>
+</div>
+
+</body>
+</html>
