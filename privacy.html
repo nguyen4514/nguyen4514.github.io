@@ -94,6 +94,8 @@
     h2 { font-size: 1.4rem; margin-bottom: 4px; }
     h3 { font-size: 1.1rem; margin-top: 12px; margin-bottom: 4px; }
     p { margin-bottom: 8px; }
+    ul.policy-bullets { list-style-type: disc; padding-left: 20px; margin-bottom: 12px; }
+    ul.policy-bullets li { margin-bottom: 6px; }
     
     .back-btn {
       display: inline-block;
@@ -123,6 +125,7 @@
           <li>🗎 <a href="#thinkauth">ThinkAuth Privacy Policy</a></li>
           <li>🗎 <a href="#thinkkb">ThinkKB Privacy Policy</a></li>
           <li>🗎 <a href="#specverify">SpecVerify Privacy Policy</a></li>
+          <li>🗎 <a href="#universal">Universal Disclosures &amp; Contact</a></li>
         </ul>
       </div>
 
@@ -132,37 +135,83 @@
         <!-- ThinkRead Section -->
         <section id="thinkread" class="policy-section">
           <h3>ThinkRead Privacy Policy</h3>
-          <p><strong>Last Updated: May 2026</strong></p>
-          <p>ThinkRead operates strictly as a local-client processing utility. We do not host central infrastructure to collect, intercept, transmit, or monetize your parsing activities or reading logs.</p>
-          <h3>Data Governance &amp; Security</h3>
-          <p>All data structural extraction and sanitation operations process entirely within your application container sandbox. External network transmission only occurs if you intentionally configure specific personal API endpoint strings for LLM operations.</p>
+          <p><strong>Last Updated: June 2026</strong></p>
+          <p>ThinkRead operates strictly as a local-client processing utility. We do not host central infrastructure to collect, intercept, transmit, or monetize your parsing activities, browsing history, or reading logs.</p>
+          
+          <h3>Data Governance &amp; External AI Providers</h3>
+          <ul class="policy-bullets">
+            <li><strong>Execution Model:</strong> ThinkRead is an engine driven entirely by user-provided API credentials. We do not supply API keys, host inference models, or retain prompt/response data layers.</li>
+            <li><strong>External Policies:</strong> Because processing runs through your own API architecture, all data interactions are governed strictly by the Service Level Agreements (SLAs), data retention parameters, model training restrictions, and privacy policies of your chosen AI infrastructure provider (e.g., Google, OpenAI, Anthropic, Groq).</li>
+            <li><strong>Permissions:</strong> Web structural extraction processes entirely within your local application sandbox. Tab permissions are utilized solely to isolate text contexts on your active display.</li>
+          </ul>
+
+          <h3>Commercial Tier &amp; Licensing</h3>
+          <ul class="policy-bullets">
+            <li>ThinkRead features an optional paid tier. Premium license provisioning, subscription lifecycle management, and transaction execution are securely processed via Lemon Squeezy acting as our Merchant of Record.</li>
+            <li>Payment processing logs, licensing credentials, and customer emails are governed by Lemon Squeezy’s compliance infrastructure. No financial billing information ever enters or resides within the extension client data layer.</li>
+          </ul>
         </section>
 
         <!-- ThinkAuth Section -->
         <section id="thinkauth" class="policy-section">
           <h3>ThinkAuth Privacy Policy</h3>
-          <p><strong>Last Updated: May 2026</strong></p>
-          <p>ThinkAuth manages web session states and application authentication boundaries exclusively inside secure, runtime-isolated contexts.</p>
-          <h3>Credential &amp; Token Handling</h3>
-          <p>Session tokens remain stored strictly within your browser's encrypted local data layer. No credentials, tokens, or cryptographic hashes are shared with external analytics software or remote servers.</p>
+          <p><strong>Last Updated: June 2026</strong></p>
+          <p>ThinkAuth manages web session states and application authentication boundaries exclusively inside secure, runtime-isolated client contexts.</p>
+          
+          <h3>Data Minimization &amp; Local Execution</h3>
+          <ul class="policy-bullets">
+            <li><strong>Operational Scope:</strong> ThinkAuth functions as a non-analytical local client workspace barrier. The utility alters localized layout appearances and intercepts sign-on endpoints strictly to enforce your chosen access rules without parsing deep code payloads or gathering telemetry.</li>
+            <li><strong>Passive Design:</strong> ThinkAuth does not execute arbitrary script alterations, intercept transport payloads, or monitor user data traffic.</li>
+            <li><strong>Token Isolation:</strong> Session configurations, target rules, and token boundaries remain locked within your browser's encrypted local data container. No credentials, tokens, or cryptographic hashes are shared with remote servers or third-party tracking scripts.</li>
+          </ul>
+
+          <h3>Commercial Tier &amp; Licensing</h3>
+          <ul class="policy-bullets">
+            <li>ThinkAuth features a paid premium tier. Financial processing, customer verification, and active license validation arrays are handled entirely via Lemon Squeezy. No payment cards or financial transactions touch your extension's local background workers.</li>
+          </ul>
         </section>
 
         <!-- ThinkKB Section -->
         <section id="thinkkb" class="policy-section">
           <h3>ThinkKB Privacy Policy</h3>
-          <p><strong>Last Updated: May 2026</strong></p>
-          <p>ThinkKB facilitates on-demand content ingestion and documentation drafting loops solely under explicit end-user control.</p>
-          <h3>Third-Party API Integration</h3>
-          <p>When connecting with external enterprise platform APIs (such as Google Workspace), data routing is handled directly through secure OAuth channels connecting your device client to the provider. No intermediate backend systems log or cache your documents.</p>
+          <p><strong>Last Updated: June 2026</strong></p>
+          <p>ThinkKB facilitates on-demand content ingestion and browser documentation drafting loops solely under explicit end-user invocation.</p>
+          
+          <h3>Third-Party Infrastructure &amp; Keys</h3>
+          <ul class="policy-bullets">
+            <li><strong>Bring Your Own Key (BYOK):</strong> ThinkKB is an orchestration tool powered entirely by your personal AI provider keys. We do not collect, view, or retain your API credentials; keys are saved directly into your local client's sandboxed storage.</li>
+            <li><strong>No Data Collection or Model Training:</strong> Because we do not control, lease, or host centralized models, Nguyen Labs never captures your documentation telemetry, reads your contexts, or uses your data for machine learning model training loops. You are bound entirely to the data protection rules of your explicit AI provider.</li>
+            <li><strong>Secure OAuth Routing:</strong> Connections to external enterprise platforms (such as Google Workspace) utilize direct client-to-provider OAuth paths. No intermediate backend relays log, mirror, or cache your document assets.</li>
+          </ul>
         </section>
 
         <!-- SpecVerify Section -->
         <section id="specverify" class="policy-section">
           <h3>SpecVerify Privacy Policy</h3>
-          <p><strong>Last Updated: May 2026</strong></p>
-          <p>SpecVerify parses structure profiles and system validation metrics locally on your device.</p>
-          <h3>Information Security</h3>
-          <p>Schemas and assertion rules are never shared. All code evaluation blocks execute purely on-device with zero telemetry or remote monitoring requirements.</p>
+          <p><strong>Last Updated: June 2026</strong></p>
+          <p>SpecVerify parses configuration structure profiles and system validation metrics locally on your device instance.</p>
+          
+          <h3>Local Execution &amp; Third-Party AI Models</h3>
+          <ul class="policy-bullets">
+            <li><strong>Core Infrastructure:</strong> SpecVerify execution protocols and validation dry runs require the injection of your personal API credentials to generate reporting structures. All processing behavior shifts compliance parameters to your provider's native privacy policy and SLAs.</li>
+            <li><strong>Absolute Data Isolation:</strong> Schemas, validation rules, assertion logs, and system metrics are never transmitted off your machine. Code blocks execute locally with zero telemetry requirements or phone-home tracking.</li>
+          </ul>
+
+          <h3>Commercial Tier &amp; Licensing</h3>
+          <ul class="policy-bullets">
+            <li>SpecVerify license logic and commercial checkout routines are driven through Lemon Squeezy. Billing telemetry is securely isolated inside their processing frame and never shared with your application environment.</li>
+          </ul>
+        </section>
+
+        <!-- Universal Compliance Section -->
+        <section id="universal" class="policy-section">
+          <h3>Universal Compliance Disclosures &amp; Rights</h3>
+          <p>Nguyen Labs operates under a unified data minimization architecture. Across all deployed extensions and utilities, we never collect personally identifiable information (PII).</p>
+          <ul class="policy-bullets">
+            <li><strong>Data Ownership:</strong> You maintain complete custody of your environment. All tokens, configuration maps, and API strings can be entirely removed instantly by purging your local browser storage or uninstalling the utility clients.</li>
+            <li><strong>Data Sale:</strong> Nguyen Labs maintains a zero-monetization policy regarding user data. We never sell, trade, broker, or rent user identifiers, configurations, or operational habits to advertising networks or data aggregators.</li>
+            <li><strong>Compliance Contact Vector:</strong> For platform auditing questions, licensing status inquiries, or data privacy verifications, contact the developer node directly via email at: <strong>home of nguyen4514@gmail.com</strong>.</li>
+          </ul>
         </section>
 
       </div>
