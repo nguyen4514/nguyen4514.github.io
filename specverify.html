@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nguyen Labs - SpecVerify Distribution Center</title>
+  <style>
+    :root {
+      --desktop-bg: #008080;
+      --win-bg: #c0c0c0;
+      --win-edge-light: #fff;
+      --win-edge-shadow: #808080;
+      --win-edge-dark: #0a0a0a;
+      --title-blue: #000080;
+      --title-text: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--desktop-bg);
+      font-family: Tahoma, Arial, sans-serif;
+      font-size: 14px;
+      color: var(--win-edge-dark);
+      padding: 16px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      color: white;
+      text-shadow: 1px 1px #000;
+      margin-bottom: 24px;
+    }
+
+    .breadcrumbs {
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    .breadcrumbs a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+      max-width: 750px;
+      margin: 0 auto 60px auto;
+    }
+
+    .window {
+      background-color: var(--win-bg);
+      padding: 3px;
+      width: 100%;
+      border: 2px solid;
+      border-color: var(--win-edge-light) var(--win-edge-shadow) var(--win-edge-shadow) var(--win-edge-light);
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    }
+
+    .title-bar {
+      background: var(--title-blue);
+      color: var(--title-text);
+      padding: 4px 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .title-bar-controls button {
+      width: 16px;
+      height: 14px;
+      font-size: 9px;
+      background-color: var(--win-bg);
+      border: 1px solid;
+      border-color: var(--win-edge-light) var(--win-edge-shadow) var(--win-edge-shadow) var(--win-edge-light);
+      cursor: pointer;
+    }
+
+    .window-body {
+      padding: 16px;
+    }
+
+    .window-inset {
+      padding: 16px;
+      background: #fff;
+      border: 2px solid;
+      border-color: var(--win-edge-shadow) var(--win-edge-light) var(--win-edge-light) var(--win-edge-shadow);
+      line-height: 1.5;
+    }
+
+    h2 { font-size: 1.4rem; margin-bottom: 4px; }
+    .tagline { font-style: italic; color: #444; margin-bottom: 16px; font-weight: bold; }
+
+    /* Media Player Embedding */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border: 2px solid;
+      border-color: var(--win-edge-shadow) var(--win-edge-light) var(--win-edge-light) var(--win-edge-shadow);
+      background: #000;
+      margin-top: 8px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Download Interface CSS */
+    .download-layout {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .download-graphic {
+      font-size: 48px;
+      text-align: center;
+      padding-top: 8px;
+    }
+
+    .platform-card {
+      margin-bottom: 16px;
+      padding: 12px;
+      background: #f1f1f1;
+      border: 1px dashed var(--win-edge-shadow);
+    }
+
+    .platform-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .platform-title {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: bold;
+      color: #000;
+      text-decoration: none;
+      padding: 6px 16px;
+      background-color: var(--win-bg);
+      border: 2px solid;
+      border-color: var(--win-edge-light) var(--win-edge-shadow) var(--win-edge-shadow) var(--win-edge-light);
+      margin-top: 8px;
+    }
+
+    .btn-download:active {
+      border-color: var(--win-edge-shadow) var(--win-edge-light) var(--win-edge-light) var(--win-edge-shadow);
+      padding: 7px 15px 5px 17px;
+    }
+
+    .notice-box {
+      margin-top: 16px;
+      background: #ffffe1;
+      padding: 10px;
+      border: 1px solid var(--win-edge-shadow);
+      font-size: 12px;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    footer {
+      background-color: var(--win-bg);
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: 40px;
+      border-top: 2px solid var(--win-edge-light);
+    }
+
+    .start-btn {
+      font-weight: bold;
+      padding: 4px 12px;
+      background-color: var(--win-bg);
+      border: 2px solid;
+      border-color: var(--win-edge-light) var(--win-edge-shadow) var(--win-edge-shadow) var(--win-edge-light);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .footer-links {
+      margin-left: auto;
+      margin-right: 8px;
+      padding: 4px 12px;
+      font-size: 12px;
+      text-decoration: none;
+      color: #000;
+      background: #fff;
+      border: 2px solid;
+      border-color: var(--win-edge-shadow) var(--win-edge-light) var(--win-edge-light) var(--win-edge-shadow);
+    }
+
+    .system-tray {
+      display: flex;
+      align-items: center;
+      padding: 4px 12px;
+      background: var(--win-bg);
+      font-size: 12px;
+      border: 2px solid;
+      border-color: var(--win-edge-shadow) var(--win-edge-light) var(--win-edge-light) var(--win-edge-shadow);
+      margin-right: 4px;
+    }
+
+    .tray-link {
+      color: #000;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Nguyen Labs</h1>
+    <div class="breadcrumbs">
+      <a href="index.html">Workspace</a> &raquo; SpecVerify.exe
+    </div>
+  </header>
+
+  <main>
+    <!-- Product Profile & Video Demonstration Window -->
+    <section class="window">
+      <div class="title-bar">
+        <span>MediaPlayer - SpecVerify_Demo.avi</span>
+        <div class="title-bar-controls"><button>_</button><button>🗖</button><button>X</button></div>
+      </div>
+      <div class="window-body">
+        <h2>SpecVerify</h2>
+        <p class="tagline">Configuration Specification &amp; Structural Schema Validation Engine</p>
+        
+        <div class="window-inset">
+          <p style="margin-bottom: 12px;">
+            SpecVerify delivers lightning-fast, automated cross-platform validation utilities straight to your local workstation environment. Designed explicitly for infrastructure dry runs, protocol debugging, and system integration assertions, it parses layout rules instantly without leaving a messy technical footprint on the host system.
+          </p>
+          
+          <!-- Embedded Video Context Container -->
+          <div class="video-container">
+            <!-- REPLACE 'YOUTUBE_VIDEO_ID_HERE' WITH YOUR ACTUAL INDIVIDUAL VIDEO ALPHANUMERIC STRING -->
+            <iframe 
+              src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID_HERE" 
+              title="SpecVerify Operation Demonstration" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Distribution & Portable Binary Extraction Window -->
+    <section class="window">
+      <div class="title-bar">
+        <span>File Download - Deploy_Packages</span>
+        <div class="title-bar-controls"><button>_</button><button>🗖</button><button>X</button></div>
+      </div>
+      <div class="window-body">
+        <div class="window-inset download-layout">
+          <div class="download-graphic">💾</div>
+          <div>
+            <h3 style="margin-bottom: 8px; font-size: 1.1rem;">Download Portable Binary Releases</h3>
+            <p style="color: #555; margin-bottom: 16px; font-size: 13px;">
+              Select your host architecture package target below. SpecVerify packages are distributed as frozen, standalone zero-dependency execution instances.
+            </p>
+
+            <!-- Windows Package -->
+            <div class="platform-card">
+              <div class="platform-title">🪟 Microsoft Windows Package</div>
+              <p class="file-meta" style="font-size: 12px; color: #666;">Target: Windows 10 / 11 (64-bit Architecture)</p>
+              <a href="downloads/SpecVerify.exe" class="btn-download" download>
+                <span>💾</span> Download SpecVerify.exe
+              </a>
+            </div>
+
+            <!-- Linux Package -->
+            <div class="platform-card">
+              <div class="platform-title">🐧 Ubuntu / Debian Linux Package</div>
+              <p class="file-meta" style="font-size: 12px; color: #666;">Target: Ubuntu LTS Baselines (Standard User Executable Binary)</p>
+              <a href="downloads/specverify" class="btn-download" download>
+                <span>💾</span> Download specverify (Linux)
+              </a>
+            </div>
+
+            <!-- Frictionless Execution Warning Notice -->
+            <div class="notice-box">
+              <span>ℹ️</span>
+              <div>
+                <strong>Zero Administrative Overhead Required:</strong> These deployments run purely inside user-space. They do not require <code>sudo</code> permissions, local system UAC prompts, or administrative registry modifications. Just download, drop into your local execution folder, and launch.
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="index.html" class="start-btn">
+      <span>💾</span>
+      <strong>Start</strong>
+    </a>
+    
+    <a href="privacy.html" class="footer-links">Privacy Center</a>
+    
+    <div class="system-tray">
+      <a href="https://buymeacoffee.com/nguyen4514" target="_blank" rel="noopener" class="tray-link">
+        <span>☕</span>
+        <span>Buy Me a Coffee</span>
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
